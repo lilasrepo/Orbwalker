@@ -1,4 +1,4 @@
-﻿using Dalamud.Game.ClientState.GamePad;
+using Dalamud.Game.ClientState.GamePad;
 using Dalamud.Interface.Components;
 using ECommons.ExcelServices;
 using ECommons.GameFunctions;
@@ -32,13 +32,13 @@ internal static unsafe class UI
         if (ThreadLoadImageHandler.TryGetTextureWrap(Path.Combine(Svc.PluginInterface.AssemblyLocation.DirectoryName, "res", "q.png"), out var t))
         {
             ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 20);
-            ImGui.Image(t.Handle, new Vector2(20, 20));
+            ImGui.Image(t.ImGuiHandle, new Vector2(20, 20));
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
                 if (ThreadLoadImageHandler.TryGetTextureWrap(Path.Combine(Svc.PluginInterface.AssemblyLocation.DirectoryName, "res", "t.png"), out var t2))
                 {
-                    ImGui.Image(t2.Handle, new Vector2(t2.Width, t2.Height));
+                    ImGui.Image(t2.ImGuiHandle, new Vector2(t2.Width, t2.Height));
                 }
                 ImGui.EndTooltip();
                 if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Right))
@@ -58,7 +58,7 @@ internal static unsafe class UI
         ImGui.Separator();
 
         #region Movement
-        ImGui.TextColored(0xFFFFDCEB, $"Movement");
+        ImGui.TextColored(ImGui.ColorConvertU32ToFloat4(0xFFFFDCEB), $"Movement");
         ImGuiGroup.BeginGroupBox();
         ImGuiEx.Text($"Slidecast Window Calibration");
         ImGuiComponents.HelpMarker(
@@ -166,7 +166,7 @@ internal static unsafe class UI
         #endregion
 
         #region Overlay
-        ImGui.TextColored(0xFFFFDCEB, $"Overlay");
+        ImGui.TextColored(ImGui.ColorConvertU32ToFloat4(0xFFFFDCEB), $"Overlay");
         ImGuiEx.RadioButtonBool("Image-based", "Vector-based", ref C.UseImguiOverlay, true, inverted: true);
         ImGuiGroup.BeginGroupBox();
         ImGuiEx.Text($"Display Overlay");
@@ -195,7 +195,7 @@ internal static unsafe class UI
     }
     static void Jobs()
     {
-        ImGui.TextColored(0xFFFFDCEB, $"Jobs");
+        ImGui.TextColored(ImGui.ColorConvertU32ToFloat4(0xFFFFDCEB), $"Jobs");
         ImGuiComponents.HelpMarker("Select the jobs you wish to use Orbwalker's movement locking features on. Not all jobs have cast times, but if you have the extra features enabled for the general actions it will apply to those jobs.");
         ImGuiGroup.BeginGroupBox();
         ImGuiEx.TextV("Toggle:");
@@ -264,7 +264,7 @@ internal static unsafe class UI
             bool val = P.Config.EnabledJobs[job];
             if(ThreadLoadImageHandler.TryGetIconTextureWrap(job.GetIcon(), false, out var tex))
             {
-                ImGui.Image(tex.Handle, new(ImGui.GetFrameHeight()));
+                ImGui.Image(tex.ImGuiHandle, new(ImGui.GetFrameHeight()));
                 ImGui.SameLine(0, 2);
             }
             if (ImGui.Checkbox($"{job}", ref val))
@@ -359,7 +359,7 @@ internal static unsafe class UI
     static void Extras()
     {
         #region Job Specific Actions
-        ImGui.TextColored(0xFFFFDCEB, $"Job-specific Actions");
+        ImGui.TextColored(ImGui.ColorConvertU32ToFloat4(0xFFFFDCEB), $"Job-specific Actions");
         ImGuiComponents.HelpMarker($"Actions that are not technically casts but can be interrupted or stopped early due to movement of any kind.");
         ImGuiGroup.BeginGroupBox();
         ImGuiEx.Text($"Block movement when these actions are active:");
@@ -374,7 +374,7 @@ internal static unsafe class UI
         #endregion
 
         #region Miscellaneous Casts
-        ImGui.TextColored(0xFFFFDCEB, $"Miscellaneous Casts");
+        ImGui.TextColored(ImGui.ColorConvertU32ToFloat4(0xFFFFDCEB), $"Miscellaneous Casts");
         ImGuiGroup.BeginGroupBox();
         ImGuiEx.Text($"Block movement when these actions are being casted:");
         ImGui.Separator();
@@ -385,7 +385,7 @@ internal static unsafe class UI
         #endregion
 
         #region PvP
-        ImGui.TextColored(0xFFFFDCEB, $"PvP");
+        ImGui.TextColored(ImGui.ColorConvertU32ToFloat4(0xFFFFDCEB), $"PvP");
         ImGuiGroup.BeginGroupBox();
         ImGuiEx.Spacing(); ImGui.Checkbox($"Enable PvP Orbwalking", ref C.PVP);
         ImGuiComponents.HelpMarker("Allows use when in PvP game modes such as Frontlines and Crystaline Conflict.\n\nThis is considered an unfair advantage over other players so use at your own risk (and conscious).");
