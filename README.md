@@ -1,11 +1,11 @@
-# Orbwalker（繁中移植版 · TC12） / Traditional-Chinese Port
+# Orbwalker（繁中移植版 · TC13） / Traditional-Chinese Port
 
 > S P A C E　G L I D I N G（讀條中也能走位）。<br>
 > S P A C E G L I D I N G.
 
-**繁體中文**：這是 **[Orbwalker](https://github.com/PunishXIV/Orbwalker)** 的繁體中文客戶端移植版，對應 **FFXIV 7.1 / yanmucorp Dalamud API12（.NET 9）**。本專案僅做相容性移植，**非官方、非原作維護**；所有原始功能與設計著作權歸原作者 **кайт машина (Puni.sh)**。
+**繁體中文**：這是 **[Orbwalker](https://github.com/PunishXIV/Orbwalker)** 的繁體中文客戶端移植版，對應 **FFXIV 7.20 / yanmucorp Dalamud API13（.NET 9）**。本專案僅做相容性移植，**非官方、非原作維護**；所有原始功能與設計著作權歸原作者 **кайт машина (Puni.sh)**。
 
-**English**: A Traditional-Chinese-client port of **[Orbwalker](https://github.com/PunishXIV/Orbwalker)** targeting **FFXIV 7.1 / yanmucorp Dalamud API12 (.NET 9)**. Compatibility port only — **unofficial and not maintained by the original author**. All original work © **кайт машина (Puni.sh)**.
+**English**: A Traditional-Chinese-client port of **[Orbwalker](https://github.com/PunishXIV/Orbwalker)** targeting **FFXIV 7.20 / yanmucorp Dalamud API13 (.NET 9)**. Compatibility port only — **unofficial and not maintained by the original author**. All original work © **кайт машина (Puni.sh)**.
 
 ---
 
@@ -24,7 +24,7 @@ Locks player movement while casting, maximising caster uptime throughout a fight
    ```
    https://raw.githubusercontent.com/lilasrepo/DalamudPlugins/main/pluginmaster.json
    ```
-4. 輸入 `/xlplugins`，搜尋 **Orbwalker (TC12)** → 安裝 → 啟用。
+4. 輸入 `/xlplugins`，搜尋 **Orbwalker (TC13)** → 安裝 → 啟用。
 
 **English**
 1. Launch the Traditional-Chinese client with **XIVTCLauncher**.
@@ -33,14 +33,14 @@ Locks player movement while casting, maximising caster uptime throughout a fight
    ```
    https://raw.githubusercontent.com/lilasrepo/DalamudPlugins/main/pluginmaster.json
    ```
-4. Type `/xlplugins`, search **Orbwalker (TC12)** → Install → Enable.
+4. Type `/xlplugins`, search **Orbwalker (TC13)** → Install → Enable.
 
 ## 對應版本 / Compatibility
 
 | 項目 / Item | 版本 / Version |
 |---|---|
-| 遊戲 / Game | FFXIV 7.1（繁中客戶端 / TC client） |
-| Dalamud | yanmucorp API12（.NET 9） |
+| 遊戲 / Game | FFXIV 7.20（繁中客戶端 / TC client） |
+| Dalamud | yanmucorp API13（.NET 9） |
 | 移植自上游 / Ported from upstream | v1.0.1.10 |
 
 ## 原作與授權 / Credits & License
