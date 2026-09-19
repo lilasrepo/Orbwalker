@@ -5,7 +5,6 @@ using Dalamud.Interface.Colors;
 using Dalamud.Interface.Components;
 using Dalamud.Interface.ImGuiNotification;
 using Dalamud.Interface.Utility;
-using Dalamud.Logging;
 using Dalamud.Plugin;
 using ECommons.DalamudServices;
 using ECommons.ImGuiMethods;
